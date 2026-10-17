@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.7 -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Área de un círculo</title>
+      <script>
+         function areaCirculo(radio) {
+            return Math.PI * Math.pow(radio, 2);
+         }
+
+         function calcular() {
+            var radio = parseFloat(document.getElementById("radioInput").value);
+            var area = areaCirculo(radio);
+            document.getElementById("resultado").innerHTML = "El área del círculo es: " + area.toFixed(2);
+         }
+
+         function iniciar() {
+            document.getElementById("botonCalcular").addEventListener("click", calcular, false);
+         }
+         window.addEventListener("load", iniciar, false);
+      </script>
+   </head>
+   <body>
+      <form action="#">
+         <label>Radio del círculo: <input id="radioInput" type="text"></label>
+         <input id="botonCalcular" type="button" value="Calcular Área">
+      </form>
+      <p id="resultado"></p>
+   </body>
+</html>

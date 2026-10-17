@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Ejercicio 9.30 -->
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Ejercicio 9.30 - Función Misterio</title>
+      <script>
+         // El parámetro b debe ser un entero positivo para evitar recursividad infinita
+         function misterio( a, b )
+         {
+            if ( b === 1 )
+               return a;
+            else
+               return a + misterio( a, b - 1 );
+         } // fin de la función misterio
+
+         function probarFuncion()
+         {
+            var resultado = misterio( 5, 4 );
+            document.getElementById( "resultado" ).innerHTML = 
+               "<strong>¿Qué hace la función?</strong> Calcula el producto de la multiplicación de dos enteros " +
+               "<em>a</em> y <em>b</em> mediante sumas sucesivas (multiplicación por recursividad).<br><br>" +
+               "Ejecutando misterio(5, 4) el resultado es: <strong>" + resultado + "</strong>";
+         }
+
+         window.addEventListener( "load", probarFuncion, false );
+      </script>
+   </head>
+   <body>
+      <h1>Análisis de la función misterio</h1>
+      <div id = "resultado"></div>
+   </body>
+</html>
